@@ -1,0 +1,186 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700&family=Raleway:wght@100;200;300;400;500;600;700&display=swap");
+
+* {
+  /* menghapus seluruh padding dan margin standar yang diberikan browser pada elemen */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Nunito, sans-serif;
+  margin: 0 auto;
+  max-width: 40%;
+}
+
+section .heading,
+nav {
+  margin-bottom: 80%;
+}
+
+.heading {
+  padding-top: 20vh;
+  font-size: large;
+}
+
+.text-intro {
+  font-size: 1.2rem;
+}
+
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+.img-thumbnail {
+  width: 15%;
+  float: left;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+a {
+  text-decoration: none;
+  background: linear-gradient(180deg, transparent 0, transparent 80%, #fbf36d 0, #fce120);
+  color: #454b4e;
+  transition: background 0.5 ease;
+  color: rgb(0, 0, 0);
+}
+
+nav a,
+.linkInfo {
+  font-size: 18px;
+  font-weight: 400;
+  text-decoration: none;
+  color: rgb(74, 72, 72);
+}
+
+.linkInfo {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+nav li {
+  padding-top: 7px;
+  list-style-type: none;
+}
+
+.card h1 {
+  font-size: 2em;
+}
+h3 {
+  text-decoration: underline;
+  color: #6d5e55;
+  font-family: Raleway, sans-serif;
+}
+
+#content img {
+  width: 310px;
+  margin-top: 10px;
+  margin-left: 15px;
+}
+
+.project-row {
+  display: flex;
+  padding: 5px;
+  flex-basis: 3%;
+}
+.project-item {
+  margin-left: 20px;
+}
+
+.hideExtraInfo {
+  width: 60%;
+  height: 70%;
+  background: linear-gradient(37deg, #d5d5d5 0%, #e7e7e7 20%);
+  background: -webkit-linear-gradient(37deg, #d5d5d5 0%, #e7e7e7 20%);
+  background: -moz-linear-gradient(37deg, #d5d5d5 0%, #e7e7e7 20%);
+  position: absolute;
+  transform: translate(-90%) scale(0.1);
+  top: 17%;
+  left: 57%;
+  padding: 20px;
+  visibility: hidden;
+  transition: 0.2s, top 0.2s;
+}
+
+.open-extraInfo {
+  visibility: visible;
+  top: 50%;
+  left: 50%;
+  width: 60%;
+  height: 70%;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.btnRemove {
+  width: 35px;
+  font-size: 30px;
+  margin-left: 96%;
+  cursor: pointer;
+  color: rgb(130, 130, 130);
+  border: none;
+  background: #e7e7e7;
+}
+.btnRemove:hover {
+  color: rgb(43, 43, 43);
+}
+
+#hideExtraInfo {
+  text-align: left;
+}
+
+#hideExtraInfo section {
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 1024px) {
+  body {
+    max-width: 85%;
+    font-size: 17px;
+  }
+  .img-thumbnail {
+    max-width: 100%;
+    width: 35%;
+    margin-top: 30px;
+  }
+  .text-intro {
+    text-align: right;
+  }
+  #hideExtraInfo {
+    max-width: 100%;
+    width: 400px;
+    height: 400px;
+    top: 45%;
+    left: 50%;
+    font-size: 70%;
+  }
+
+  .logo {
+    max-width: 100%;
+    margin: 0;
+  }
+
+  #content img {
+    max-width: 90%;
+    display: flex;
+  }
+
+  .project-row {
+    flex-direction: column;
+    max-width: 100%;
+    padding: 5px;
+  }
+  .project-item {
+    max-width: 100%;
+    margin-left: 20px;
+    margin-bottom: 15px;
+  }
+
+  footer {
+    max-width: 100%;
+    text-align: center;
+  }
+}
