@@ -190,9 +190,3 @@ h3 {
     text-align: center;
   }
 }
-
-.ball {
-  position: absolute;
-  border-radius: 100%;
-  opacity: 0.7;
-}
