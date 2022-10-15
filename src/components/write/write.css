@@ -1,0 +1,46 @@
+.write {
+  margin: 50px 0 50px 0;
+}
+
+.write-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.write-item {
+  margin: 0% 20% 0% 20%;
+}
+.write-headingTitle {
+  font-size: 2em;
+  text-decoration: underline;
+  margin-left: 20%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: "Courier New", Courier, monospace;
+}
+.write-subheadingTitle {
+  text-decoration: underline;
+  color: #6d5e55;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  display: block; /* or inline-block */
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  overflow: hidden;
+  max-width: 25em;
+  font-family: "IBM Plex Sans", Courier, monospace;
+}
+
+@media screen and (max-width: 1024px) {
+  .write-headingTitle {
+    flex: 100%;
+    font-size: 130%;
+  }
+  .write-subheadingTitle {
+    font-size: 120%;
+  }
+  .write-article {
+    margin-left: -5%;
+    margin-right: -25%;
+  }
+}

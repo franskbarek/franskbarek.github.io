@@ -1,0 +1,22 @@
+.projects-headingTitle {
+  font-size: 50px;
+  margin-top: 25px;
+  margin-left: 150px;
+  flex-wrap: nowrap;
+}
+
+.projects-linkPath {
+  margin-left: 9%;
+  display: flex;
+  font-family: "Courier New", Courier, monospace;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .projects-headingTitle {
+    position: relative;
+    left: -6%;
+    margin-bottom: -10%;
+    font-size: 210%;
+  }
+}
