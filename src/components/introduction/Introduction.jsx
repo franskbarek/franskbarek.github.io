@@ -6,6 +6,7 @@ import "./introduction.css";
 function infoHandle() {
   swal("franzferdinand.kbarek@gmail.com", {
     button: false,
+    className: "infoTamb",
   });
 }
 

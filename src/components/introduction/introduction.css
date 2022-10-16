@@ -90,4 +90,10 @@
   .nav-container {
     margin-left: 8%;
   }
+  .infoTamb {
+    font-size: 10px;
+    margin-bottom: 125%;
+    width: 48%;
+    margin-right: 50%;
+  }
 }
