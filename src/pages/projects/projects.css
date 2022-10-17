@@ -6,17 +6,21 @@
 }
 
 .projects-linkPath {
-  margin-left: 9%;
   display: flex;
+  margin-left: 6%;
   font-family: "Courier New", Courier, monospace;
   text-decoration: none;
+}
+
+.projects {
+  margin-bottom: 2%;
 }
 
 @media screen and (max-width: 1024px) {
   .projects-headingTitle {
     position: relative;
-    left: -6%;
-    margin-bottom: -10%;
-    font-size: 210%;
+    left: -2%;
+    /* margin-bottom: -2%; */
+    font-size: 200%;
   }
 }
