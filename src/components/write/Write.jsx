@@ -1,21 +1,28 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import Loading from "../loading/Loading";
 import "./write.css";
 
 export default function Write() {
   const [writes, setWrites] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const getWrites = async () => {
+      setLoading(true);
       try {
         const res = await axios.get("https://franskbarek-page-api.cyclic.app/backend/writes");
         setWrites(res.data);
+        setLoading(false);
       } catch (err) {
         console.log(err);
       }
     };
     getWrites();
   }, []);
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <div className="write">

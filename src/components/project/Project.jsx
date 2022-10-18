@@ -1,21 +1,29 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import Loading from "../loading/Loading";
 import "./project.css";
 
 export default function Project() {
   const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const getProjects = async () => {
+      setLoading(true);
       try {
         const res = await axios.get("https://franskbarek-page-api.cyclic.app/backend/projects");
         setProjects(res.data);
+        setLoading(false);
       } catch (err) {
         console.log(err);
       }
     };
     getProjects();
   }, []);
+
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <>
@@ -45,7 +53,6 @@ export default function Project() {
             </span>
           </div>
         ))}
-        ;
       </div>
     </>
   );
