@@ -29,10 +29,8 @@ export default function Write() {
       <div className="write-container">
         <h2 className="write-headingTitle">Baca tulisan terbaru</h2>
         {writes.map((write) => (
-          <div className="write-item">
-            <h3 className="write-subheadingTitle" key={write.id}>
-              {write.title}
-            </h3>
+          <div className="write-item" key={write._id}>
+            <h3 className="write-subheadingTitle">{write.title}</h3>
             <p className="write-article">{write.content}</p>
           </div>
         ))}

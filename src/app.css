@@ -36,7 +36,6 @@
   transition: all 120ms ease-in-out 0s;
   background-size: 100% 200%;
   background-position: 0px 0px;
-  /* font-family: "Courier New", Courier, monospace; */
   font-family: "IBM Plex Sans", Courier, monospace;
   margin-left: 10px;
 }
@@ -48,7 +47,6 @@
   transition: all 120ms ease-in-out 0s;
   background-size: 100% 100%;
   background-position: 0px 0px;
-  /* font-family: "Courier New", Courier, monospace; */
   font-family: "IBM Plex Sans", Courier, monospace;
   margin-left: 10px;
 }
