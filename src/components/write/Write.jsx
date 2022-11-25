@@ -11,7 +11,7 @@ export default function Write() {
     const getWrites = async () => {
       setLoading(true);
       try {
-        const res = await axios.get("https://franskbarek-page-api.cyclic.app/backend/writes");
+        const res = await axios.get(process.env.REACT_APP_BASE_URL_WRITES);
         setWrites(res.data);
         setLoading(false);
       } catch (err) {

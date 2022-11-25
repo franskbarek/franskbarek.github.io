@@ -11,7 +11,7 @@ export default function Project() {
     const getProjects = async () => {
       setLoading(true);
       try {
-        const res = await axios.get("https://franskbarek-page-api.cyclic.app/backend/projects");
+        const res = await axios.get(process.env.REACT_APP_BASE_URL_PROJECTS);
         setProjects(res.data);
         setLoading(false);
       } catch (err) {
