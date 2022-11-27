@@ -6,9 +6,9 @@ export default function MaintenanceSign() {
     <div className="maintenanceSign-container">
       <Alert severity="info">
         <AlertTitle>Info</AlertTitle>
-        Sedang proses maitenance! (penambahan fitur pagination, gruping tipe tulisan & komentar) —{" "}
-        <Link to={"/"} style={{ textDecoration: "none", color: "blue" }}>
-          <strong>Kembali!</strong>
+        Sedang proses maintenance! (penambahan fitur pagination, gruping tipe tulisan & komentar) —{" "}
+        <Link to={"/"} style={{ textDecoration: "none", color: "darkblue" }}>
+          <strong>Kembali</strong>
         </Link>
       </Alert>
     </div>

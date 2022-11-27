@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Loading from "../loading/Loading";
+import SkeletonLoading from "../../utils/SkeletonLoading";
 import "./project.css";
 
 export default function Project() {
@@ -9,8 +9,8 @@ export default function Project() {
 
   useEffect(() => {
     const getProjects = async () => {
-      setLoading(true);
       try {
+        setLoading(true);
         const res = await axios.get(process.env.REACT_APP_BASE_URL_PROJECTS);
         setProjects(res.data);
         setLoading(false);
@@ -18,11 +18,12 @@ export default function Project() {
         console.log(err);
       }
     };
+
     getProjects();
   }, []);
 
   if (loading) {
-    return <Loading />;
+    return <SkeletonLoading />;
   }
 
   return (
