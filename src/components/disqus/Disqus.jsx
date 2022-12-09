@@ -18,23 +18,46 @@
 //   );
 // };
 
+// import { DiscussionEmbed } from "disqus-react";
+// import "./disqus.css";
+
+// export const Disqus = () => {
+//   return (
+//     <div className="disqusPage-container">
+//       <div className="disqusPage-items">
+//         <DiscussionEmbed
+//           shortname="franskbarekpage"
+//           config={{
+//             url: "https://franskbarek.github.io",
+//             identifier: "franskbarekpage",
+//             title: "franskbarekpage",
+//             // language: "en_EN",
+//           }}
+//         />
+//       </div>
+//     </div>
+//   );
+// };
+
 import { DiscussionEmbed } from "disqus-react";
+import { useLocation } from "react-router-dom";
 import "./disqus.css";
 
-export const Disqus = () => {
+export function SinglePageComment() {
+  const location = useLocation();
+  const path = location.pathname.split("/")[3];
   return (
     <div className="disqusPage-container">
       <div className="disqusPage-items">
         <DiscussionEmbed
-          shortname="franskbarekpage"
+          shortname={`writes-group-tech-${path}`} //alias harus unik
           config={{
-            url: "https://franskbarek.github.io",
-            identifier: "franskbarekpage",
-            title: "franskbarekpage",
-            // language: "en_EN",
+            url: "https://franskbarek.github.io", //url website
+            identifier: `writes-group/tech/${path}`, //path
+            title: `writes-group/tech/${path}`, //samakan saja dengan path
           }}
         />
       </div>
     </div>
   );
-};
+}

@@ -2,29 +2,8 @@ import { Breadcrumbs, Card, CardActionArea, CardContent, CardMedia, Typography }
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { SinglePageComment } from "../../../components/disqus/Disqus";
 import "./singlePage.css";
-
-import { DiscussionEmbed } from "disqus-react";
-import "../../../components/disqus/disqus.css";
-
-export function SinglePageComment() {
-  const location = useLocation();
-  const path = location.pathname.split("/")[3];
-  return (
-    <div className="disqusPage-container">
-      <div className="disqusPage-items">
-        <DiscussionEmbed
-          shortname={`writes-group-tech-${path}`} //alias harus unik
-          config={{
-            url: "https://franskbarek.github.io", //url website
-            identifier: `writes-group/tech/${path}`, //path
-            title: `writes-group/tech/${path}`, //samakan saja dengan path
-          }}
-        />
-      </div>
-    </div>
-  );
-}
 
 export default function SinglePage() {
   const [title, setTitle] = useState("");
@@ -74,16 +53,15 @@ export default function SinglePage() {
               {/* <span>4m | </span> */}
               <span className="link">Author: @franskbarek</span>
             </div>
-            {/* <div className="singlePage-image"> */}
-            <CardMedia component="img" height="600" image={image} alt="image" />
-            {/* </div> */}
+            <div className="singlePage-image">
+              <CardMedia component="img" height="600" image={image} alt="image" />
+            </div>
           </CardActionArea>
           <CardContent>
             <p className="singlePage-content">{description}</p>
           </CardContent>
         </Card>
       </div>
-      <p className="singlePage-content">{description}</p>
       <div className="disqus-container"></div>
       <SinglePageComment />
     </div>
