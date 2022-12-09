@@ -44,7 +44,7 @@ export default function WritesGroup() {
   return (
     <div className="writesGroup-container">
       {/* writesGroup topbar */}
-      <div writesGroup-topbar>
+      <div writesgroup-topbar>
         <Breadcrumbs aria-label="breadcrumb">
           <Link underline="hover" color="inherit" to="/">
             Halaman Utama

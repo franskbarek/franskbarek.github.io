@@ -1,4 +1,4 @@
-import { Breadcrumbs, Card, CardActionArea, CardContent, Typography } from "@mui/material";
+import { Breadcrumbs, Card, CardActionArea, CardContent, CardMedia, Typography } from "@mui/material";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
@@ -74,10 +74,9 @@ export default function SinglePage() {
               {/* <span>4m | </span> */}
               <span className="link">Author: @franskbarek</span>
             </div>
-            <div className="singlePage-image">
-              {/* <CardMedia component="img" height="600" image={image} alt="img" /> */}
-              <img src={image} alt="img" />
-            </div>
+            {/* <div className="singlePage-image"> */}
+            <CardMedia component="img" height="600" image={image} alt="image" />
+            {/* </div> */}
           </CardActionArea>
           <CardContent>
             <p className="singlePage-content">{description}</p>
