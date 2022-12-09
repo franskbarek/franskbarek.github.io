@@ -83,6 +83,7 @@ export default function SinglePage() {
           </CardContent>
         </Card>
       </div>
+      <p className="singlePage-content">{description}</p>
       <div className="disqus-container"></div>
       <SinglePageComment />
     </div>
