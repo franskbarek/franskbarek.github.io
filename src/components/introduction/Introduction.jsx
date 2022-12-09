@@ -33,7 +33,7 @@ export default function Introduction() {
             </Link>
           </li>
           <li className="list">
-            <Link to="writes" className="link">
+            <Link to="writes-group" className="link">
               📝 Tulisan saya.
             </Link>
           </li>

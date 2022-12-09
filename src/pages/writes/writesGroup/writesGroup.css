@@ -1,0 +1,20 @@
+.writesGroup-container {
+  padding: 10px;
+}
+.writesGroup-accordian-container {
+  margin-top: 40px;
+  flex-wrap: wrap;
+  display: flex;
+}
+.writesGroup-accordian-item {
+  width: 500px;
+}
+
+/* @media screen and (max-width: 1024px) {
+  .writes-headingTitle {
+    position: relative;
+    margin-bottom: -10%;
+    left: 9%;
+    font-size: 200%;
+  }
+} */

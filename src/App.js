@@ -1,8 +1,10 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Homepage from "./pages/homepage/Homepage";
 import Projects from "./pages/projects/Projects";
-import Writes from "./pages/writes/Writes";
+import WritesGroup from "./pages/writes/writesGroup/WritesGroup";
+import WritesTech from "./pages/writes/type_Tech/WritesTech";
 import "./app.css";
+import SingePage from "./pages/writes/singlePage/SingePage";
 
 function App() {
   return (
@@ -11,7 +13,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="projects" element={<Projects />} />
-          <Route path="writes" element={<Writes />} />
+          <Route path="writes-group" element={<WritesGroup />} />
+          <Route path="writes-group/tech" element={<WritesTech />} />
+          <Route path="writes-group/tech/:id" element={<SingePage />} />
         </Routes>
       </BrowserRouter>
     </div>

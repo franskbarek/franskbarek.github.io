@@ -1,0 +1,10 @@
+.disqusPage-container {
+  display: flex;
+  justify-content: center;
+}
+
+.disqusPage-items {
+  margin: 40px;
+  width: 900px;
+  flex-wrap: wrap;
+}

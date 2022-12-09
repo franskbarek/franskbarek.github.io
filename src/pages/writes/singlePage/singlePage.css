@@ -1,0 +1,19 @@
+.singlePage-container {
+  padding: 10px;
+}
+.singlePage-content-container {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+.singlePage-title {
+  padding: 20px;
+  font-size: 50px;
+}
+.singlePage-subtitle {
+  padding: 10px 20px;
+  font-size: 17px;
+}
+.singlePage-content {
+  font-size: 20px;
+}

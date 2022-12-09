@@ -1,0 +1,24 @@
+.writesTech-container {
+  padding: 10px;
+}
+
+.writesTech-contentContainer {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+}
+.writesTech-contentItem {
+  width: 30rem;
+}
+.writesTech-pagination {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+@media screen and (max-width: 1024px) {
+  .writesTech-contentContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+}
