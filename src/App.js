@@ -4,7 +4,7 @@ import Projects from "./pages/projects/Projects";
 import WritesGroup from "./pages/writes/writesGroup/WritesGroup";
 import WritesTech from "./pages/writes/type_Tech/WritesTech";
 import "./app.css";
-import SingePage from "./pages/writes/singlePage/SingePage";
+import SinglePage from "./pages/writes/singlePage/SinglePage";
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
           <Route path="projects" element={<Projects />} />
           <Route path="writes-group" element={<WritesGroup />} />
           <Route path="writes-group/tech" element={<WritesTech />} />
-          <Route path="writes-group/tech/:id" element={<SingePage />} />
+          <Route path="writes-group/tech/:id" element={<SinglePage />} />
         </Routes>
       </BrowserRouter>
     </div>

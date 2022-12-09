@@ -1,4 +1,4 @@
-import { Breadcrumbs, Card, CardActionArea, CardContent, CardMedia, Typography } from "@mui/material";
+import { Breadcrumbs, Card, CardActionArea, CardContent, Typography } from "@mui/material";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
@@ -26,7 +26,7 @@ export function SinglePageComment() {
   );
 }
 
-export default function SingePage() {
+export default function SinglePage() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [image, setImage] = useState("");
@@ -70,12 +70,13 @@ export default function SingePage() {
           <CardActionArea>
             <h1 className="singlePage-title">{title}</h1>
             <div className="singlePage-subtitle">
-              <span>Date | </span>
-              <span>4m | </span>
-              <span>Author</span>
+              {/* <span>Date | </span> */}
+              {/* <span>4m | </span> */}
+              <span className="link">Author: @franskbarek</span>
             </div>
             <div className="singlePage-image">
-              <CardMedia component="img" height="600" image={image} alt="img" />
+              {/* <CardMedia component="img" height="600" image={image} alt="img" /> */}
+              <img src={image} alt="img" />
             </div>
           </CardActionArea>
           <CardContent>
