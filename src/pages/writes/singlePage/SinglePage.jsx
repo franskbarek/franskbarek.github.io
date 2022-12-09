@@ -15,7 +15,7 @@ export default function SinglePage() {
   useEffect(() => {
     const fetchSinglePage = async () => {
       try {
-        const res = await axios.get("http://franskbarek-page-api.cyclic.app/backend/writes/" + path);
+        const res = await axios.get("https://franskbarek-page-api.cyclic.app/backend/writes/" + path);
         setTitle(res.data.title);
         setDescription(res.data.content);
         setImage(res.data.photo);
