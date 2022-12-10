@@ -8,6 +8,7 @@ import MuiAccordion from "@mui/material/Accordion";
 import MuiAccordionSummary from "@mui/material/AccordionSummary";
 import MuiAccordionDetails from "@mui/material/AccordionDetails";
 import { useState } from "react";
+import { Home } from "@mui/icons-material";
 
 const Accordion = styled((props) => <MuiAccordion disableGutters elevation={0} square {...props} />)(({ theme }) => ({
   border: `1px solid ${theme.palette.divider}`,
@@ -44,12 +45,12 @@ export default function WritesGroup() {
   return (
     <div className="writesGroup-container">
       {/* writesGroup topbar */}
-      <div writesgroup-topbar>
+      <div className="writesGroup-topbar">
         <Breadcrumbs aria-label="breadcrumb">
-          <Link underline="hover" color="inherit" to="/">
-            Halaman Utama
+          <Link className="linkNew" underline="hover" to="/">
+            <Home fontSize="large" />
           </Link>
-          <Typography color="text.primary">Kategori tulisan</Typography>
+          <Typography sx={{ fontSize: "20px" }}>Kategori tulisan</Typography>
         </Breadcrumbs>
       </div>
       {/* writesGroup accordian */}
@@ -60,7 +61,7 @@ export default function WritesGroup() {
               <Typography>Topik Umum</Typography>
             </AccordionSummary>
             <AccordionDetails>
-              <Link to="/writes-group/tech">
+              <Link to="/writes-group/tech" className="linkNew">
                 <Typography>Mengenai hal-hal umum dalam keseharian</Typography>
               </Link>
             </AccordionDetails>

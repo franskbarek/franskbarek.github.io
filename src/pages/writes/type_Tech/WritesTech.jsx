@@ -1,10 +1,10 @@
+import { Home } from "@mui/icons-material";
 import { Avatar, Breadcrumbs, Card, CardActionArea, CardActions, CardContent, CardMedia, Pagination, Typography } from "@mui/material";
 import Stack from "@mui/material/Stack";
 import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Disqus } from "../../../components/disqus/Disqus";
 import "./writesTech.css";
 
 export default function WritesTech() {
@@ -33,20 +33,20 @@ export default function WritesTech() {
       {/* writes topbar */}
       <div className="writesTech-topbar">
         <Breadcrumbs className="bread" aria-label="breadcrumb">
-          <Link underline="hover" to="/">
-            Halaman utama
+          <Link className="linkNew" underline="hover" to="/">
+            <Home fontSize="large" />
           </Link>
-          <Link underline="hover" to="/writes-group">
+          <Link className="linkNew" underline="hover" to="/writes-group">
             Kategori tulisan
           </Link>
-          <Typography color="text.primary">Teknologi Bahasa pemrograman</Typography>
+          <Typography sx={{ fontSize: "20px" }}>Mengenai hal-hal umum dalam keseharian</Typography>
         </Breadcrumbs>
       </div>
       {/* writes pagination */}
       <div className="writesTech-pagination">
         <Stack spacing={2}>
           <Typography sx={{ textAlign: "center" }}>Page: {page}</Typography>
-          <Pagination count={10} page={page} variant="outlined" color="primary" size="small" onChange={handleChange} />
+          <Pagination count={5} page={page} variant="outlined" color="standard" size="large" shape="rounded" onChange={handleChange} />
         </Stack>
       </div>
       {/* writesTech content */}
@@ -54,15 +54,15 @@ export default function WritesTech() {
         <div className="writesTech-contentContainer">
           {writes.map((write) => (
             <div className="writesTech-contentItem" key={write._id}>
-              <Card sx={{ maxWidth: 375 }}>
+              <Card sx={{ maxWidth: "1000px" }}>
                 <CardActionArea>
-                  <Link to={`/writes-group/tech/${write._id}`}>
+                  <Link to={`/writes-group/tech/${write._id}`} className="linkNew">
                     <CardContent>
                       <Typography gutterBottom variant="h5" component="div">
                         {write.title}
                       </Typography>
                     </CardContent>
-                    <CardMedia component="img" height="200" image={write.photo} alt="image" />
+                    <CardMedia component="img" height="300" image={write.photo} alt="image" />
                   </Link>
                 </CardActionArea>
                 <CardActions>
@@ -80,7 +80,7 @@ export default function WritesTech() {
         <div className="writesTech-pagination">
           <Stack spacing={2}>
             <Typography sx={{ textAlign: "center" }}>Page: {page}</Typography>
-            <Pagination count={10} page={page} variant="outlined" color="primary" size="small" onChange={handleChange} />
+            <Pagination count={5} page={page} variant="outlined" color="standard" size="large" shape="rounded" onChange={handleChange} />
           </Stack>
         </div>
       </div>

@@ -1,6 +1,9 @@
 .writesGroup-container {
   padding: 10px;
 }
+.writesGroup-topbar {
+}
+
 .writesGroup-accordian-container {
   margin-top: 40px;
   flex-wrap: wrap;

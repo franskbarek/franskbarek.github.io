@@ -1,3 +1,4 @@
+import { Home } from "@mui/icons-material";
 import { Breadcrumbs, Card, CardActionArea, CardContent, CardMedia, Typography } from "@mui/material";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -32,16 +33,16 @@ export default function SinglePage() {
       {/* writes topbar */}
       <div className="singlePage-topbar">
         <Breadcrumbs className="bread" aria-label="breadcrumb">
-          <Link underline="hover" to="/">
-            Halaman utama
+          <Link className="linkNew" underline="hover" to="/">
+            <Home fontSize="large" />
           </Link>
-          <Link underline="hover" to="/writes-group">
+          <Link className="linkNew" underline="hover" to="/writes-group">
             Kategori tulisan
           </Link>
-          <Link underline="hover" to="/writes-group/tech">
-            Teknologi Bahasa pemrograman
+          <Link className="linkNew" underline="hover" to="/writes-group/tech">
+            Mengenai hal-hal umum dalam keseharian
           </Link>
-          <Typography color="text.primary">{title}</Typography>
+          <Typography sx={{ fontSize: "20px" }}>{title}</Typography>
         </Breadcrumbs>
       </div>
       <div className="singlePage-content-container">
@@ -49,8 +50,8 @@ export default function SinglePage() {
           <CardActionArea>
             <h1 className="singlePage-title">{title}</h1>
             <div className="singlePage-subtitle">
-              {/* <span>Date | </span> */}
-              {/* <span>4m | </span> */}
+              <span>Sabtu, 12 Sep 2022 | </span>
+              <span>4m Reading | </span>
               <span className="link">Author: @franskbarek</span>
             </div>
             <div className="singlePage-image">

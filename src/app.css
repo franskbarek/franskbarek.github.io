@@ -5,6 +5,20 @@
   box-sizing: border-box;
 }
 
+.linkNew {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+}
+.linkNew:hover {
+  text-decoration: underline;
+}
+.linkNew2 {
+  text-decoration: none;
+  font-size: 20px;
+  color: rgb(0, 0, 0);
+}
+
 .link {
   text-decoration: none;
   color: black;
