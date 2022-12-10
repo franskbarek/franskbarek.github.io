@@ -55,7 +55,7 @@ export default function SinglePage() {
               <span className="link">Author: @franskbarek</span>
             </div>
             <div className="singlePage-image">
-              <CardMedia component="img" height="600" image={image} alt="image" />
+              <CardMedia className="cardImage" component="img" height="600" image={image} alt="image" />
             </div>
           </CardActionArea>
           <CardContent>

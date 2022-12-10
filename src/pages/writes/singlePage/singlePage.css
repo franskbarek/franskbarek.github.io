@@ -16,4 +16,28 @@
 }
 .singlePage-content {
   font-size: 20px;
+  line-height: 2rem;
+}
+
+.cardImage:hover {
+  -webkit-transform: scale(1.03);
+  -moz-transform: scale(1.03);
+  -o-transform: scale(1.03);
+  -ms-transform: scale(1.03);
+  transform: scale(1.03);
+  transition: all 130ms ease-in-out 0s;
+}
+
+@media screen and (max-width: 1024px) {
+  .singlePage-title {
+    font-size: 29px;
+  }
+  .singlePage-subtitle {
+    font-size: 12px;
+    padding: 0px;
+    margin-bottom: 5px;
+  }
+  .cardImage {
+    height: 250px;
+  }
 }

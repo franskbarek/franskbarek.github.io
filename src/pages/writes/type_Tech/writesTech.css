@@ -8,7 +8,19 @@
 }
 .writesTech-contentItem {
   width: 30rem;
-  margin: 0px 2px;
+  margin: 4px 2px;
+  opacity: 0.8;
+}
+.writesTech-contentItem:hover {
+  opacity: 1;
+}
+.cardImage:hover {
+  -webkit-transform: scale(1.03);
+  -moz-transform: scale(1.03);
+  -o-transform: scale(1.03);
+  -ms-transform: scale(1.03);
+  transform: scale(1.03);
+  transition: all 130ms ease-in-out 0s;
 }
 
 .writesTech-pagination {

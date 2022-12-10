@@ -5,6 +5,7 @@ import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+// import { SinglePageComment } from "../../../components/disqus/Disqus";
 import "./writesTech.css";
 
 export default function WritesTech() {
@@ -58,11 +59,11 @@ export default function WritesTech() {
                 <CardActionArea>
                   <Link to={`/writes-group/tech/${write._id}`} className="linkNew">
                     <CardContent>
-                      <Typography gutterBottom variant="h5" component="div">
+                      <Typography sx={{ fontWeight: "bold" }} gutterBottom variant="h5" component="div">
                         {write.title}
                       </Typography>
                     </CardContent>
-                    <CardMedia component="img" height="300" image={write.photo} alt="image" />
+                    <CardMedia className="cardImage" component="img" height="300" image={write.photo} alt="image" />
                   </Link>
                 </CardActionArea>
                 <CardActions>
@@ -84,8 +85,8 @@ export default function WritesTech() {
           </Stack>
         </div>
       </div>
-      {/* comment component*/}
-      {/* <Disqus /> */}
+      {/* comment box component*/}
+      {/* <SinglePageComment /> */}
     </div>
   );
 }
