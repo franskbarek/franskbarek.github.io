@@ -25,22 +25,25 @@ export default function Introduction() {
         <img src={photoProfile} alt="photoProfile" className="img-thumbnail" title="fraka" />
         <p className="text-intro">Salam kenal, saya susah diam, biasanya berpikir, menulis atau buat sesuatu. senang rasanya bisa berbagi.</p>
       </div>
+      <div className="horizontal-line">
+        <hr />
+      </div>
       <div className="nav-container">
         <ul className="list-items">
           <li className="list">
             <Link to="projects" className="link">
-              🛠️ Daftar kerjaan/karya.
+              🛠️ Daftar kerjaan/karya
             </Link>
           </li>
           <li className="list">
             <Link to="writes-group" className="link">
-              📝 Tulisan saya.
+              📝 Tulisan saya
             </Link>
           </li>
-          <li className="list link" title="Informasi tambahan">
-            <p style={{ cursor: "pointer" }} onClick={infoHandle}>
-              🖇 Informasi tambahan.
-            </p>
+          <li className="list" title="Informasi tambahan">
+            <Link className="link" onClick={infoHandle}>
+              🖇 Informasi tambahan
+            </Link>
           </li>
         </ul>
       </div>

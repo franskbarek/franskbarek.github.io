@@ -7,6 +7,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 // import { SinglePageComment } from "../../../components/disqus/Disqus";
 import "./writesTech.css";
+import photoProfile from "../../../assets/image/photo-profile.jpg";
 
 export default function WritesTech() {
   const [writes, setWrites] = useState([]);
@@ -67,7 +68,7 @@ export default function WritesTech() {
                   </Link>
                 </CardActionArea>
                 <CardActions>
-                  <Avatar alt="Frans Kbarek" src="/static/images/avatar/1.jpg" sx={{ width: 40, height: 40 }} variant="square" />
+                  <Avatar alt="Frans Kbarek" src={photoProfile} sx={{ width: 40, height: 40, borderTopStyle: "groove", borderLeftStyle: "groove" }} variant="square" />
                   <div className="author">
                     <strong className="link">@franskbarek</strong>
                     <p>Frans Kbarek</p>

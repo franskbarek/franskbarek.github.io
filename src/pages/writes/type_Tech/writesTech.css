@@ -9,11 +9,8 @@
 .writesTech-contentItem {
   width: 30rem;
   margin: 4px 2px;
-  opacity: 0.8;
 }
-.writesTech-contentItem:hover {
-  opacity: 1;
-}
+
 .cardImage:hover {
   -webkit-transform: scale(1.03);
   -moz-transform: scale(1.03);

@@ -28,14 +28,14 @@
   background-size: 100% 210%;
   background-position: 0px 0px;
   font-family: "Courier New", Courier, monospace;
-  font-weight: 549;
 }
 
 .link:hover {
   text-decoration: none;
   color: black;
   padding: 2px 0px 1px;
-  background-image: linear-gradient(transparent 0%, transparent calc(50% - 9px), rgba(0, 255, 0, 0.35) calc(50% - 9px), rgba(0, 255, 0, 0.35) 100%);
+  background-image: linear-gradient(transparent 0%, transparent calc(50% - 9px), rgb(0, 255, 0) calc(50% - 9px), rgb(0, 255, 0) 100%);
+
   transition: all 120ms ease-in-out 0s;
   background-size: 100% 10%;
   background-position: 0px 0px;
