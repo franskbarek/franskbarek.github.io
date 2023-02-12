@@ -1,10 +1,10 @@
 import express from "express";
 const router = express.Router();
-import Write from "../models/Write.js";
+import WriteTechGeneral from "../models/Write-Tech-General.js";
 
 // create
 router.post("/", async (req, res) => {
-  const newWrite = new Write(req.body);
+  const newWrite = new WriteTechGeneral(req.body);
   try {
     const savedWrite = await newWrite.save();
     res.status(200).json(savedWrite);
@@ -16,10 +16,10 @@ router.post("/", async (req, res) => {
 // update
 router.put("/:id", async (req, res) => {
   try {
-    const write = Write.finById(req.params.id);
+    const write = WriteTechGeneral.finById(req.params.id);
     if (write.username.id === req.body.username) {
       try {
-        const updatedWrite = await Write.findByIdAndUpdate(req.params.id, { $set: req.body }, { new: true });
+        const updatedWrite = await WriteTechGeneral.findByIdAndUpdate(req.params.id, { $set: req.body }, { new: true });
         res.status(200).json(updatedWrite);
       } catch (err) {
         res.status(500).json(err);
@@ -34,11 +34,11 @@ router.put("/:id", async (req, res) => {
 // delete
 // router.delete("/:id", async (req, res) => {
 //   try {
-//     const write = await Write.findById(req.params.id);
+//     const write = await WriteTechGeneral.findById(req.params.id);
 //     if (write.username.id === req.body.username) {
 //       try {
 //         write.delete();
-//         res.status(200).json("Write has been deleted!");
+//         res.status(200).json("WriteTechGeneral has been deleted!");
 //       } catch (err) {
 //         res.status(500).json(err);
 //       }
@@ -52,7 +52,7 @@ router.put("/:id", async (req, res) => {
 // get
 router.get("/:id", async (req, res) => {
   try {
-    const write = await Write.findById(req.params.id);
+    const write = await WriteTechGeneral.findById(req.params.id);
     res.status(200).json(write);
   } catch (err) {
     res.status(500).json(err);
@@ -62,7 +62,7 @@ router.get("/:id", async (req, res) => {
 // get all
 // router.get("/", async (req, res) => {
 //   try {
-//     const write = await Write.find();
+//     const write = await WriteTechGeneral.find();
 //     res.status(200).json(write);
 //   } catch (err) {
 //     res.status(500).json(err);
@@ -77,13 +77,13 @@ router.get("/", async (req, res) => {
 
   try {
     // execute query with page and limit values
-    const posts = await Write.find()
+    const posts = await WriteTechGeneral.find()
       .limit(limit * 1)
       .skip((page - 1) * limit)
       .exec();
 
     // get total documents in the Posts collection
-    const count = await Write.countDocuments();
+    const count = await WriteTechGeneral.countDocuments();
 
     // return response with posts, total pages, and current page
     res.status(200).json({
