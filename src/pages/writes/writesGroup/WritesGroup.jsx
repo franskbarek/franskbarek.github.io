@@ -55,64 +55,41 @@ export default function WritesGroup() {
       {/* writesGroup accordian */}
       <div className="writesGroup-accordian-container">
         <div className="writesGroup-accordian-item">
-          <Accordion expanded={expanded === "panel1"} onChange={handleChange("panel1")}>
+          <Accordion onChange={handleChange("panel1")}>
             <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
               <Typography>Topik Umum</Typography>
             </AccordionSummary>
             <AccordionDetails>
-              <Link to="/writes-group/tech" className="linkNew">
+              <Link to="/writes-group/general" className="linkNew">
                 <Typography>Mengenai hal-hal umum dalam keseharian</Typography>
               </Link>
             </AccordionDetails>
           </Accordion>
         </div>
         <div className="writesGroup-accordian-item">
-          <Accordion expanded={expanded === "panel2"} onChange={handleChange("panel2")}>
+          <Accordion onChange={handleChange("panel2")}>
             <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
               <Typography>Teknologi</Typography>
             </AccordionSummary>
             <AccordionDetails>
-              <Typography>Teknologi Bahasa Pemrograman</Typography>
+              <Link to="/writes-group/tech-general" className="linkNew">
+                <Typography>Umum</Typography>
+              </Link>
+            </AccordionDetails>
+            <AccordionDetails>
+              <Link to="/writes-group/tech-programming" className="linkNew">
+                <Typography>Bahasa Pemrograman</Typography>
+              </Link>
             </AccordionDetails>
           </Accordion>
         </div>
         <div className="writesGroup-accordian-item">
-          <Accordion expanded={expanded === "panel3"} onChange={handleChange("panel3")}>
+          <Accordion onChange={handleChange("panel3")}>
             <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
               <Typography>Tools</Typography>
             </AccordionSummary>
             <AccordionDetails>
               <Typography>Rekomendasi tools populer</Typography>
-            </AccordionDetails>
-          </Accordion>
-        </div>
-        <div className="writesGroup-accordian-item">
-          <Accordion expanded={expanded === "panel4"} onChange={handleChange("panel4")}>
-            <AccordionSummary aria-controls="panel4d-content" id="panel4d-header">
-              <Typography>Other 1</Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Typography>Other 1 description</Typography>
-            </AccordionDetails>
-          </Accordion>
-        </div>
-        <div className="writesGroup-accordian-item">
-          <Accordion expanded={expanded === "panel5"} onChange={handleChange("panel5")}>
-            <AccordionSummary aria-controls="panel5d-content" id="panel5d-header">
-              <Typography>Other 2</Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Typography>Other 2 description</Typography>
-            </AccordionDetails>
-          </Accordion>
-        </div>
-        <div className="writesGroup-accordian-item">
-          <Accordion expanded={expanded === "panel6"} onChange={handleChange("panel6")}>
-            <AccordionSummary aria-controls="panel6d-content" id="panel6d-header">
-              <Typography>Other 3</Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Typography>Other 3 description</Typography>
             </AccordionDetails>
           </Accordion>
         </div>

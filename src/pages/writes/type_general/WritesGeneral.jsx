@@ -6,11 +6,11 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 // import { SinglePageComment } from "../../../components/disqus/Disqus";
-import "./writesTech.css";
+import "./writesGeneral.css";
 import photoProfile from "../../../assets/image/photo-profile.jpg";
 import SkeletonLoading from "../../../utils/SkeletonLoading";
 
-export default function WritesTech() {
+export default function WritesGeneral() {
   const [writes, setWrites] = useState([]);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
@@ -39,9 +39,9 @@ export default function WritesTech() {
   }
 
   return (
-    <div className="writesTech-container">
+    <div className="writesGeneral-container">
       {/* writes topbar */}
-      <div className="writesTech-topbar">
+      <div className="writesGeneral-topbar">
         <Breadcrumbs className="bread" aria-label="breadcrumb">
           <Link className="linkNew" underline="hover" to="/">
             <Home fontSize="large" />
@@ -53,20 +53,20 @@ export default function WritesTech() {
         </Breadcrumbs>
       </div>
       {/* writes pagination */}
-      <div className="writesTech-pagination">
+      <div className="writesGeneral-pagination">
         <Stack spacing={2}>
           <Typography sx={{ textAlign: "center" }}>Page: {page}</Typography>
           <Pagination count={5} page={page} variant="outlined" color="standard" size="large" shape="rounded" onChange={handleChange} />
         </Stack>
       </div>
-      {/* writesTech content */}
-      <div className="writesTech-content">
-        <div className="writesTech-contentContainer">
+      {/* writesGeneral content */}
+      <div className="writesGeneral-content">
+        <div className="writesGeneral-contentContainer">
           {writes.map((write) => (
-            <div className="writesTech-contentItem" key={write._id}>
+            <div className="writesGeneral-contentItem" key={write._id}>
               <Card sx={{ maxWidth: "1000px" }}>
                 <CardActionArea>
-                  <Link to={`/writes-group/tech/${write._id}`} className="linkNew">
+                  <Link to={`/writes-group/general/${write._id}`} className="linkNew">
                     <CardContent>
                       <Typography sx={{ fontWeight: "bold" }} gutterBottom variant="h5" component="div">
                         {write.title}
@@ -87,7 +87,7 @@ export default function WritesTech() {
           ))}
         </div>
         {/* writes pagination */}
-        <div className="writesTech-pagination">
+        <div className="writesGeneral-pagination">
           <Stack spacing={2}>
             <Typography sx={{ textAlign: "center" }}>Page: {page}</Typography>
             <Pagination count={5} page={page} variant="outlined" color="standard" size="large" shape="rounded" onChange={handleChange} />

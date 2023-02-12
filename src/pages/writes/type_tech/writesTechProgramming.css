@@ -1,12 +1,12 @@
-.writesTech-container {
+.writesTechProgramming-container {
   padding: 10px;
 }
 
-.writesTech-contentContainer {
+.writesTechProgramming-contentContainer {
   flex-wrap: wrap;
   display: flex;
 }
-.writesTech-contentItem {
+.writesTechProgramming-contentItem {
   width: 30rem;
   margin: 4px 2px;
 }
@@ -20,14 +20,14 @@
   transition: all 130ms ease-in-out 0s;
 }
 
-.writesTech-pagination {
+.writesTechProgramming-pagination {
   display: flex;
   justify-content: center;
   padding: 20px 0px;
 }
 
 /* @media screen and (max-width: 1024px) {
-  .writesTech-contentContainer {
+  .writesTechProgramming-contentContainer {
     flex-direction: column;
     align-items: center;
     width: 100%;
