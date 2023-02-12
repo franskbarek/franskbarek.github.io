@@ -57,7 +57,7 @@ export default function SinglePage() {
             <h1 className="singlePage-title">{title}</h1>
             <div className="singlePage-subtitle">
               <span>{releaseDate}</span>
-              <span>{readTime}</span>
+              <span> | {readTime} | </span>
               <span className="link">Author: @{author}</span>
             </div>
             <div className="singlePage-image">
