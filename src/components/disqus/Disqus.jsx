@@ -45,16 +45,17 @@ import "./disqus.css";
 
 export function SinglePageComment() {
   const location = useLocation();
-  const path = location.pathname.split("/")[3];
+  const path = location.pathname.split("/");
+  console.log(path);
   return (
     <div className="disqusPage-container">
       <div className="disqusPage-items">
         <DiscussionEmbed
-          shortname={`writes-group-tech-${path}`} //alias harus unik
+          shortname={`writes-group-${path[2]}-${path[3]}`} //alias harus unik
           config={{
             url: "https://franskbarek.github.io", //url website
-            identifier: `writes-group/tech/${path}`, //path
-            title: `writes-group/tech/${path}`, //samakan saja dengan path
+            identifier: `writes-group/${path[2]}/${path[3]}`, //path
+            title: `writes-group/${path[2]}/${path[3]}`, //samakan saja dengan path
           }}
         />
       </div>

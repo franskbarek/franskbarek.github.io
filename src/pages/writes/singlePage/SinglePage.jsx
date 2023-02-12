@@ -45,7 +45,7 @@ export default function SinglePage() {
           <Link className="linkNew" underline="hover" to="/writes-group">
             Kategori tulisan
           </Link>
-          <Link className="linkNew" underline="hover" to="/writes-group/tech">
+          <Link className="linkNew" underline="hover" to="/writes-group/general">
             Mengenai hal-hal umum dalam keseharian
           </Link>
           <Typography sx={{ fontSize: "20px" }}>{title}</Typography>
