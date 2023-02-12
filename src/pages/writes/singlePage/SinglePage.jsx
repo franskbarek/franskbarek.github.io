@@ -8,6 +8,9 @@ import "./singlePage.css";
 
 export default function SinglePage() {
   const [title, setTitle] = useState("");
+  const [releaseDate, setReleaseDate] = useState("");
+  const [readTime, setReadTime] = useState("");
+  const [author, setAuthor] = useState("");
   const [description, setDescription] = useState("");
   const [image, setImage] = useState("");
   const location = useLocation();
@@ -18,6 +21,9 @@ export default function SinglePage() {
       try {
         const res = await axios.get("https://franskbarek-page-api.cyclic.app/backend/writes/" + path);
         setTitle(res.data.title);
+        setReleaseDate(res.data.releaseDate);
+        setReadTime(res.data.readTime);
+        setAuthor(res.data.author);
         setDescription(res.data.content);
         setImage(res.data.photo);
       } catch (err) {
@@ -50,9 +56,9 @@ export default function SinglePage() {
           <CardActionArea>
             <h1 className="singlePage-title">{title}</h1>
             <div className="singlePage-subtitle">
-              <span>Sabtu, 12 Sep 2022 | </span>
-              <span>4m Reading | </span>
-              <span className="link">Author: @franskbarek</span>
+              <span>{releaseDate}</span>
+              <span>{readTime}</span>
+              <span className="link">Author: @{author}</span>
             </div>
             <div className="singlePage-image">
               <CardMedia className="cardImage" component="img" height="600" image={image} alt="image" />
