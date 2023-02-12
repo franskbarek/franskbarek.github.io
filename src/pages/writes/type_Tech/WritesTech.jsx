@@ -8,10 +8,12 @@ import { Link } from "react-router-dom";
 // import { SinglePageComment } from "../../../components/disqus/Disqus";
 import "./writesTech.css";
 import photoProfile from "../../../assets/image/photo-profile.jpg";
+import SkeletonLoading from "../../../utils/SkeletonLoading";
 
 export default function WritesTech() {
   const [writes, setWrites] = useState([]);
   const [page, setPage] = useState(1);
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (event, value) => {
     setPage(value);
@@ -20,15 +22,21 @@ export default function WritesTech() {
   useEffect(() => {
     const fetchWrites = async () => {
       try {
+        setLoading(true);
         const res = await axios.get(`https://franskbarek-page-api.cyclic.app/backend/writes?page=${page}&limit=6`);
         // ?limit=6&skip=${page === 1 ? 0 : page * 6 - 6}
         setWrites(res.data.posts);
+        setLoading(false);
       } catch (err) {
         console.log(err.message);
       }
     };
     fetchWrites();
   }, [page]);
+
+  if (loading) {
+    return <SkeletonLoading />;
+  }
 
   return (
     <div className="writesTech-container">
