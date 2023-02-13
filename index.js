@@ -8,6 +8,9 @@ import projectsRoute from "./routes/projects.js";
 import writesRoute from "./routes/writes.js";
 import writesTechGeneralRoute from "./routes/writes-tech-general.js";
 import writesTechProgrammingRoute from "./routes/writes-tech-programming.js";
+import { fileURLToPath } from "url";
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 dotenv.config();
