@@ -1,6 +1,9 @@
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+import cookieParser from "cookie-parser";
+import path from "path";
+import logger from "morgan";
 import projectsRoute from "./routes/projects.js";
 import writesRoute from "./routes/writes.js";
 import writesTechGeneralRoute from "./routes/writes-tech-general.js";
@@ -18,6 +21,10 @@ mongoose
   .then(console.log("connected to mongodb 🚀🚀"))
   .catch((err) => console.log(err));
 
+app.use(logger("dev"));
+app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, "public")));
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "GET, POST, PATCH, PUT, DELETE, OPTIONS");
