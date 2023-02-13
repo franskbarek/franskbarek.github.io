@@ -13,6 +13,8 @@ router.post("/", async (req, res) => {
   }
 });
 
+/**
+ * 
 // update
 router.put("/:id", async (req, res) => {
   try {
@@ -31,24 +33,37 @@ router.put("/:id", async (req, res) => {
     res.status(500).json(err);
   }
 });
+
 // delete
-// router.delete("/:id", async (req, res) => {
-//   try {
-//     const write = await WriteTechGeneral.findById(req.params.id);
-//     if (write.username.id === req.body.username) {
-//       try {
-//         write.delete();
-//         res.status(200).json("WriteTechGeneral has been deleted!");
-//       } catch (err) {
-//         res.status(500).json(err);
-//       }
-//     } else {
-//       res.status(401).json("Your can delete only your write!");
-//     }
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
+router.delete("/:id", async (req, res) => {
+  try {
+    const write = await WriteTechGeneral.findById(req.params.id);
+    if (write.username.id === req.body.username) {
+      try {
+        write.delete();
+        res.status(200).json("WriteTechGeneral has been deleted!");
+      } catch (err) {
+        res.status(500).json(err);
+      }
+    } else {
+      res.status(401).json("Your can delete only your write!");
+    }
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// get all
+router.get("/", async (req, res) => {
+  try {
+    const write = await WriteTechGeneral.find();
+    res.status(200).json(write);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+*/
+
 // get
 router.get("/:id", async (req, res) => {
   try {
@@ -58,17 +73,6 @@ router.get("/:id", async (req, res) => {
     res.status(500).json(err);
   }
 });
-
-// get all
-// router.get("/", async (req, res) => {
-//   try {
-//     const write = await WriteTechGeneral.find();
-//     res.status(200).json(write);
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
-// qwert test
 
 // get limit/pagination
 router.get("/", async (req, res) => {

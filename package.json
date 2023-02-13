@@ -1,12 +1,12 @@
 {
-  "name": "frans-page-backend",
-  "version": "1.0.0",
+  "name": "frans-page-backend-v2",
+  "version": "2.0.0",
   "description": "resfulAPI frans-page",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "start-dev": "nodemon index.js"
   },
   "keywords": [],
   "author": "Frans",
