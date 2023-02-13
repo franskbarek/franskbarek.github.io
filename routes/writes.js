@@ -53,6 +53,9 @@ router.delete("/:id", async (req, res) => {
   }
 });
 
+
+*/
+
 // get all
 router.get("/", async (req, res) => {
   try {
@@ -62,8 +65,6 @@ router.get("/", async (req, res) => {
     res.status(500).json(err);
   }
 });
-
-*/
 
 // get
 router.get("/:id", async (req, res) => {

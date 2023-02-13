@@ -11,6 +11,7 @@ import writesTechProgrammingRoute from "./routes/writes-tech-programming.js";
 import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+console.log(__dirname);
 
 const app = express();
 dotenv.config();
@@ -25,7 +26,7 @@ mongoose
   .catch((err) => console.log(err));
 
 app.use(logger("dev"));
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 app.use((req, res, next) => {
