@@ -1,0 +1,25 @@
+.not-found-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  background-color: #f2f2f2;
+}
+
+.not-found-title {
+  font-size: 72px;
+  color: #333;
+  margin-top: 48px;
+}
+
+.not-found-text {
+  font-size: 24px;
+  color: #333;
+  margin-top: 16px;
+}
+
+.not-found-image {
+  margin-top: 48px;
+  width: 256px;
+  /* height: 256px; */
+}

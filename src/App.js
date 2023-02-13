@@ -9,11 +9,13 @@ import "./app.css";
 import SinglePage from "./pages/writes/singlePage/SinglePage";
 import SinglePageTechGeneral from "./pages/writes/singlePage/SinglePageTechGeneral";
 import SinglePageTechProgramming from "./pages/writes/singlePage/SinglePageTechProgramming";
+import NotFoundPage from "./utils/NotFoundPage";
 
 function App() {
   return (
     <div className="app">
-      <BrowserRouter>
+      {/* #1 */}
+      {/* <BrowserRouter>
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="projects" element={<Projects />} />
@@ -24,6 +26,24 @@ function App() {
           <Route path="writes-group/tech-general/:id" element={<SinglePageTechGeneral />} />
           <Route path="writes-group/tech-programming" element={<WritesTechProgramming />} />
           <Route path="writes-group/tech-programming/:id" element={<SinglePageTechProgramming />} />
+        </Routes>
+      </BrowserRouter> */}
+      {/* #2 */}
+      <BrowserRouter>
+        <Routes>
+          <Route exact path="/" element={<Homepage />} />
+          <Route exact path="projects" element={<Projects />} />
+          <Route path="*" element={<NotFoundPage />} />
+
+          <Route exact path="writes-group">
+            <Route index element={<WritesGroup />} />
+            <Route path="general" element={<WritesGeneral />} />
+            <Route path="general/:id" element={<SinglePage />} />
+            <Route path="tech-general" element={<WritesTechGeneral />} />
+            <Route path="tech-general/:id" element={<SinglePageTechGeneral />} />
+            <Route path="tech-programming" element={<WritesTechProgramming />} />
+            <Route path="tech-programming/:id" element={<SinglePageTechProgramming />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </div>
