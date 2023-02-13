@@ -19,7 +19,7 @@ export default function SinglePage() {
   useEffect(() => {
     const fetchSinglePage = async () => {
       try {
-        const res = await axios.get("https://franskbarek-page-api.cyclic.app/backend/writes/" + path);
+        const res = await axios.get(process.env.REACT_APP_BASE_URL_WRITES + path);
         setTitle(res.data.title);
         setReleaseDate(res.data.releaseDate);
         setReadTime(res.data.readTime);

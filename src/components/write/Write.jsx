@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Loading from "../loading/Loading";
+import SkeletonLoading from "../../utils/SkeletonLoading";
 import "./write.css";
 
 export default function Write() {
@@ -9,8 +9,8 @@ export default function Write() {
 
   useEffect(() => {
     const getWrites = async () => {
-      setLoading(true);
       try {
+        setLoading(true);
         const res = await axios.get(process.env.REACT_APP_BASE_URL_WRITES);
         setWrites(res.data);
         setLoading(false);
@@ -21,7 +21,7 @@ export default function Write() {
     getWrites();
   }, []);
   if (loading) {
-    return <Loading />;
+    return <SkeletonLoading />;
   }
 
   return (

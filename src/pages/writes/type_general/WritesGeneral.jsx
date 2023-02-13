@@ -23,7 +23,7 @@ export default function WritesGeneral() {
     const fetchWrites = async () => {
       try {
         setLoading(true);
-        const res = await axios.get(`https://franskbarek-page-api.cyclic.app/backend/writes?page=${page}&limit=6`);
+        const res = await axios.get(process.env.REACT_APP_BASE_URL_WRITES + `?page=${page}&limit=6`);
         // ?limit=6&skip=${page === 1 ? 0 : page * 6 - 6}
         setWrites(res.data.posts);
         setLoading(false);

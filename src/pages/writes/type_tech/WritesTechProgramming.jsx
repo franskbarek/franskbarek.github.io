@@ -23,7 +23,7 @@ export default function WritesTechProgramming() {
     const fetchWrites = async () => {
       try {
         setLoading(true);
-        const res = await axios.get(`https://franskbarek-page-api.cyclic.app/backend/writes-tech-programming?page=${page}&limit=6`);
+        const res = await axios.get(process.env.REACT_APP_BASE_URL_WRITES_TECH_PROGRAMMING + `?page=${page}&limit=6`);
         // ?limit=6&skip=${page === 1 ? 0 : page * 6 - 6}
         setWrites(res.data.posts);
         setLoading(false);
