@@ -49,7 +49,7 @@ export default function WritesGeneral() {
           <Link className="linkNew" underline="hover" to="/writes-group">
             Kategori tulisan
           </Link>
-          <Typography sx={{ fontSize: "20px" }}>Mengenai hal-hal umum dalam keseharian</Typography>
+          <Typography sx={{ fontSize: "20px" }}>Hal-hal umum</Typography>
         </Breadcrumbs>
       </div>
       {/* writes pagination */}

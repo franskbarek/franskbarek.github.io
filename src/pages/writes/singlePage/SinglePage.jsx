@@ -52,7 +52,7 @@ export default function SinglePage() {
             Kategori tulisan
           </Link>
           <Link className="linkNew" underline="hover" to="/writes-group/general">
-            Mengenai hal-hal umum dalam keseharian
+            Hal-hal umum
           </Link>
           <Typography sx={{ fontSize: "20px" }}>{title}</Typography>
         </Breadcrumbs>
