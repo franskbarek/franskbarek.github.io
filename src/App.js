@@ -1,4 +1,4 @@
-import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Routes, Route, BrowserRouter, HashRouter } from "react-router-dom";
 import Homepage from "./pages/homepage/Homepage";
 import Projects from "./pages/projects/Projects";
 import WritesGroup from "./pages/writes/writesGroup/WritesGroup";
@@ -29,7 +29,8 @@ function App() {
         </Routes>
       </BrowserRouter> */}
       {/* #2 */}
-      <BrowserRouter>
+      <HashRouter>
+        {/* <BrowserRouter> */}
         <Routes>
           <Route exact path="/" element={<Homepage />} />
           <Route exact path="projects" element={<Projects />} />
@@ -45,7 +46,8 @@ function App() {
             <Route path="tech-programming/:id" element={<SinglePageTechProgramming />} />
           </Route>
         </Routes>
-      </BrowserRouter>
+        {/* </BrowserRouter> */}
+      </HashRouter>
     </div>
   );
 }
