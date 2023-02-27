@@ -1,38 +1,16 @@
 import { Home } from "@mui/icons-material";
 import { Avatar, Breadcrumbs, Card, CardActionArea, CardActions, CardContent, CardMedia, Pagination, Typography } from "@mui/material";
 import Stack from "@mui/material/Stack";
-import axios from "axios";
-import { useEffect } from "react";
-import { useState } from "react";
 import { Link } from "react-router-dom";
 // import { SinglePageComment } from "../../../components/disqus/Disqus";
 import "./writesTechGeneral.css";
 import photoProfile from "../../../assets/image/photo-profile.jpg";
 import SkeletonLoading from "../../../utils/SkeletonLoading";
+import { useContext } from "react";
+import { WritesTechGeneralContainerContext } from "../../../context/WritesTechGeneralContainerContext";
 
 export default function WritesTechGeneral() {
-  const [writes, setWrites] = useState([]);
-  const [page, setPage] = useState(1);
-  const [loading, setLoading] = useState(false);
-
-  const handleChange = (event, value) => {
-    setPage(value);
-  };
-
-  useEffect(() => {
-    const fetchWrites = async () => {
-      try {
-        setLoading(true);
-        const res = await axios.get(process.env.REACT_APP_BASE_URL_WRITES_TECH_GENERAL + `?page=${page}&limit=6`);
-        // ?limit=6&skip=${page === 1 ? 0 : page * 6 - 6}
-        setWrites(res.data.posts);
-        setLoading(false);
-      } catch (err) {
-        console.log(err.message);
-      }
-    };
-    fetchWrites();
-  }, [page]);
+  const { writes, page, loading, handleChange } = useContext(WritesTechGeneralContainerContext);
 
   if (loading) {
     return <SkeletonLoading />;

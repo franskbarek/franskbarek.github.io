@@ -46,7 +46,6 @@ import "./disqus.css";
 export function SinglePageComment() {
   const location = useLocation();
   const path = location.pathname.split("/");
-  console.log(path);
   return (
     <div className="disqusPage-container">
       <div className="disqusPage-items">

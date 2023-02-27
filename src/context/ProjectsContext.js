@@ -2,9 +2,9 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { createContext } from "react";
 
-export const ProjectContext = createContext();
+export const ProjectsContext = createContext();
 
-export const ProjectProvider = ({ children }) => {
+export const ProjectsProvider = ({ children }) => {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -23,5 +23,5 @@ export const ProjectProvider = ({ children }) => {
     getProjects();
   }, []);
 
-  return <ProjectContext.Provider value={{ projects, loading }}>{children}</ProjectContext.Provider>;
+  return <ProjectsContext.Provider value={{ projects, loading }}>{children}</ProjectsContext.Provider>;
 };

@@ -1,42 +1,14 @@
 import { Home } from "@mui/icons-material";
 import { Breadcrumbs, Card, CardActionArea, CardContent, CardMedia, Typography } from "@mui/material";
-import axios from "axios";
-import { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { SinglePageComment } from "../../../components/disqus/Disqus";
+import { WriteTechProgrammingSinglePageContext } from "../../../context/WriteTechProgrammingSinglePageContext";
 import SkeletonLoadingSinglePage from "../../../utils/SkeletonLoadingSinglePage";
 import "./singlePage.css";
 
-export default function SinglePage() {
-  const [title, setTitle] = useState("");
-  const [releaseDate, setReleaseDate] = useState("");
-  const [readTime, setReadTime] = useState("");
-  const [author, setAuthor] = useState("");
-  const [description, setDescription] = useState("");
-  const [image, setImage] = useState("");
-  const [loading, setLoading] = useState(false);
-  const location = useLocation();
-  const path = location.pathname.split("/")[3];
-
-  useEffect(() => {
-    const fetchSinglePage = async () => {
-      try {
-        setLoading(true);
-        const res = await axios.get(process.env.REACT_APP_BASE_URL_WRITES_TECH_GENERAL_PROGRAMMING + path);
-        setTitle(res.data.title);
-        setReleaseDate(res.data.releaseDate);
-        setReadTime(res.data.readTime);
-        setAuthor(res.data.author);
-        setDescription(res.data.content);
-        setImage(res.data.photo);
-        setLoading(false);
-      } catch (err) {
-        console.log(err.message);
-      }
-    };
-
-    fetchSinglePage();
-  }, [path]);
+export default function SinglePageTechProgramming() {
+  const { title, releaseDate, readTime, author, description, image, loading } = useContext(WriteTechProgrammingSinglePageContext);
 
   if (loading) return <SkeletonLoadingSinglePage />;
 

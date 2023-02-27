@@ -1,20 +1,17 @@
 import { useContext } from "react";
-import { ProjectContext } from "../../context/ProjectContext";
+import { ProjectsContext } from "../../context/ProjectsContext";
 import SkeletonLoading from "../../utils/SkeletonLoading";
 import "./project.css";
 
 export default function Project() {
-  const { projects, loading } = useContext(ProjectContext);
-
-  if (loading) {
-    return <SkeletonLoading />;
-  }
+  const { projects, loading } = useContext(ProjectsContext);
+  if (loading) return <SkeletonLoading />;
 
   return (
     <>
       <h2 className="project-headTitle">Daftar kerjaan/karya</h2>
       <div className="project">
-        {projects.map((project) => (
+        {projects?.map((project) => (
           <div className="project-item" key={project._id}>
             <h3 className="project-subheadingTitle">{project.title}</h3>
             <img className="project-image" src={project.photo} alt="img" />
