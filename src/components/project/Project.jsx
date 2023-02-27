@@ -1,26 +1,10 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext } from "react";
+import { ProjectContext } from "../../context/ProjectContext";
 import SkeletonLoading from "../../utils/SkeletonLoading";
 import "./project.css";
 
 export default function Project() {
-  const [projects, setProjects] = useState([]);
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    const getProjects = async () => {
-      try {
-        setLoading(true);
-        const res = await axios.get(process.env.REACT_APP_BASE_URL_PROJECTS);
-        setProjects(res.data);
-        setLoading(false);
-      } catch (err) {
-        console.log(err);
-      }
-    };
-
-    getProjects();
-  }, []);
+  const { projects, loading } = useContext(ProjectContext);
 
   if (loading) {
     return <SkeletonLoading />;

@@ -1,4 +1,4 @@
-import { Routes, Route, BrowserRouter, HashRouter } from "react-router-dom";
+import { Routes, Route, HashRouter } from "react-router-dom";
 import Homepage from "./pages/homepage/Homepage";
 import Projects from "./pages/projects/Projects";
 import WritesGroup from "./pages/writes/writesGroup/WritesGroup";
@@ -10,44 +10,48 @@ import SinglePage from "./pages/writes/singlePage/SinglePage";
 import SinglePageTechGeneral from "./pages/writes/singlePage/SinglePageTechGeneral";
 import SinglePageTechProgramming from "./pages/writes/singlePage/SinglePageTechProgramming";
 import NotFoundPage from "./utils/NotFoundPage";
+import { ProjectProvider } from "./context/ProjectContext";
 
 function App() {
   return (
     <div className="app">
-      {/* #1 */}
-      {/* <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route path="projects" element={<Projects />} />
-          <Route path="writes-group" element={<WritesGroup />} />
-          <Route path="writes-group/general" element={<WritesGeneral />} />
-          <Route path="writes-group/general/:id" element={<SinglePage />} />
-          <Route path="writes-group/tech-general/" element={<WritesTechGeneral />} />
-          <Route path="writes-group/tech-general/:id" element={<SinglePageTechGeneral />} />
-          <Route path="writes-group/tech-programming" element={<WritesTechProgramming />} />
-          <Route path="writes-group/tech-programming/:id" element={<SinglePageTechProgramming />} />
-        </Routes>
-      </BrowserRouter> */}
-      {/* #2 */}
-      <HashRouter>
-        {/* <BrowserRouter> */}
-        <Routes>
-          <Route exact path="/" element={<Homepage />} />
-          <Route exact path="projects" element={<Projects />} />
-          <Route path="*" element={<NotFoundPage />} />
+      <ProjectProvider>
+        {/* route #1 */}
+        <HashRouter>
+          {/* <BrowserRouter> */}
+          <Routes>
+            <Route path="/" element={<Homepage />} />
+            <Route path="projects" element={<Projects />} />
+            <Route path="writes-group" element={<WritesGroup />} />
+            <Route path="writes-group/general" element={<WritesGeneral />} />
+            <Route path="writes-group/general/:id" element={<SinglePage />} />
+            <Route path="writes-group/tech-general/" element={<WritesTechGeneral />} />
+            <Route path="writes-group/tech-general/:id" element={<SinglePageTechGeneral />} />
+            <Route path="writes-group/tech-programming" element={<WritesTechProgramming />} />
+            <Route path="writes-group/tech-programming/:id" element={<SinglePageTechProgramming />} />
+            <Route exact path="*" element={<NotFoundPage />} />
+          </Routes>
+          {/* </BrowserRouter>  */}
+          {/* route alt #2 */}
+          {/* <BrowserRouter>
+          <Routes>
+            <Route exact path="/" element={<Homepage />} />
+            <Route exact path="projects" element={<Projects />} />
+            <Route exact path="*" element={<NotFoundPage />} />
 
-          <Route exact path="writes-group">
-            <Route index element={<WritesGroup />} />
-            <Route path="general" element={<WritesGeneral />} />
-            <Route path="general/:id" element={<SinglePage />} />
-            <Route path="tech-general" element={<WritesTechGeneral />} />
-            <Route path="tech-general/:id" element={<SinglePageTechGeneral />} />
-            <Route path="tech-programming" element={<WritesTechProgramming />} />
-            <Route path="tech-programming/:id" element={<SinglePageTechProgramming />} />
-          </Route>
-        </Routes>
-        {/* </BrowserRouter> */}
-      </HashRouter>
+            <Route exact path="writes-group">
+              <Route index element={<WritesGroup />} />
+              <Route path="general" element={<WritesGeneral />} />
+              <Route path="general/:id" element={<SinglePage />} />
+              <Route path="tech-general" element={<WritesTechGeneral />} />
+              <Route path="tech-general/:id" element={<SinglePageTechGeneral />} />
+              <Route path="tech-programming" element={<WritesTechProgramming />} />
+              <Route path="tech-programming/:id" element={<SinglePageTechProgramming />} />
+            </Route>
+          </Routes>
+          </BrowserRouter> */}
+        </HashRouter>
+      </ProjectProvider>
     </div>
   );
 }
