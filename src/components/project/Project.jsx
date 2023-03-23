@@ -4,6 +4,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import SkeletonLoading from "../../utils/SkeletonLoading";
 import "./project.css";
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 export default function Project() {
   const [projects, setProjects] = useState([]);
@@ -24,58 +25,59 @@ export default function Project() {
     getProjects();
   }, []);
 
-  if (loading) {
-    return <SkeletonLoading />;
-  }
-
   return (
-    <>
+    <div className="projects-container">
       <h2 className="project-headTitle">Daftar kerjaan/karya</h2>
-      <div className="project">
-        {projects.map((project) => (
-          <div className="project-item" key={project._id}>
-            {/* accordian start */}
-            <Accordion>
-              <AccordionSummary>
-                <Typography>
-                  <h3 className="project-subheadingTitle">{project.title}</h3>
-                  <div className="project-image-flow">
-                    <img className="project-image" src={project.photo} alt="img" />
-                  </div>
-                  <AccordionSummary expandIcon={<ExpandMoreIcon className="expand-icon" />} aria-controls="panel1a-content" id="panel1a-header"></AccordionSummary>
-                </Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Typography>
-                  <p className="project-desc">
-                    {project.desc} <i className="linkYellow">{project.createdAt.split("").splice(0, 10)}</i>
-                  </p>
-                  <span className="project-wrapLink">
-                    {!project.code_link ? (
-                      <a className="project-link link" href={project.site_link} target="{_blank}">
-                        Demo
-                      </a>
-                    ) : !project.site_link ? (
-                      <a className="project-link link" href={project.code_link} target="{_blank}">
-                        Dokumentasi
-                      </a>
-                    ) : (
-                      <span className="project-wrapLink">
+      {loading ? (
+        <SkeletonLoading />
+      ) : (
+        <div className="project">
+          {projects.map((project) => (
+            <div className="project-item" key={project._id}>
+              {/* accordian start */}
+              <Accordion>
+                <AccordionSummary>
+                  <Typography>
+                    <h3 className="project-subheadingTitle">{project.title}</h3>
+                    <div className="project-image-flow">
+                      <img className="project-image" src={project.photo} alt="img" />
+                    </div>
+                    <AccordionSummary expandIcon={<ExpandMoreIcon className="expand-icon" />} aria-controls="panel1a-content" id="panel1a-header"></AccordionSummary>
+                  </Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <Typography>
+                    <p className="project-desc">
+                      <ReactMarkdown>{project.desc}</ReactMarkdown>
+                      <i className="linkYellow">{project.createdAt.split("").splice(0, 10)}</i>
+                    </p>
+                    <span className="project-wrapLink">
+                      {!project.code_link ? (
                         <a className="project-link link" href={project.site_link} target="{_blank}">
                           Demo
                         </a>
-                        <a className="project-link linkYellow" href={project.code_link} target="{_blank}">
+                      ) : !project.site_link ? (
+                        <a className="project-link link" href={project.code_link} target="{_blank}">
                           Dokumentasi
                         </a>
-                      </span>
-                    )}
-                  </span>
-                </Typography>
-              </AccordionDetails>
-            </Accordion>
-          </div>
-        ))}
-      </div>
-    </>
+                      ) : (
+                        <span className="project-wrapLink">
+                          <a className="project-link link" href={project.site_link} target="{_blank}">
+                            Demo
+                          </a>
+                          <a className="project-link linkYellow" href={project.code_link} target="{_blank}">
+                            Dokumentasi
+                          </a>
+                        </span>
+                      )}
+                    </span>
+                  </Typography>
+                </AccordionDetails>
+              </Accordion>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
   );
 }

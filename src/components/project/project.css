@@ -1,3 +1,6 @@
+.project-container {
+}
+
 .project-headTitle {
   font-family: "Courier New", Courier, monospace;
   font-size: 2em;
@@ -16,7 +19,7 @@
 }
 
 .project-item {
-  /* margin: 5px; */
+  margin-top: 30px;
 }
 
 .project-subheadingTitle {
@@ -46,16 +49,16 @@
 }
 
 .project-desc {
-  font-family: monospace;
-  font-size: 18px;
-  display: block;
+  /* font-family: monospace; */
+  /* font-size: 18px; */
+  /* display: block; */
   text-overflow: ellipsis;
   word-wrap: break-word;
   overflow: hidden;
-  max-width: 25em;
+  max-width: 27em;
   margin-bottom: 10px;
-  padding: 10px;
-  line-height: 1.2;
+  /* padding: 10px; */
+  line-height: 1.5;
 }
 .project-link {
   font-size: 20px;

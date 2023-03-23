@@ -1,6 +1,7 @@
 import { Home } from "@mui/icons-material";
 import { Breadcrumbs, Card, CardActionArea, CardContent, CardMedia, Typography } from "@mui/material";
 import { useContext } from "react";
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import { Link } from "react-router-dom";
 import { SinglePageComment } from "../../../components/disqus/Disqus";
 import { WriteTechProgrammingSinglePageContext } from "../../../context/WriteTechProgrammingSinglePageContext";
@@ -38,12 +39,14 @@ export default function SinglePageTechProgramming() {
               <span> | {readTime} | </span>
               <span className="link">Author: @{author}</span>
             </div>
-            <div className="singlePage-image">
-              <CardMedia className="cardImage" component="img" height="600" image={image} alt="image" />
+            <div className="singlePage-image card-image-flow">
+              <CardMedia className="card-image" component="img" height="600" image={image} alt="image" />
             </div>
           </CardActionArea>
           <CardContent>
-            <p className="singlePage-content">{description}</p>
+            <p className="singlePage-content">
+              <ReactMarkdown>{description}</ReactMarkdown>
+            </p>
           </CardContent>
         </Card>
       </div>

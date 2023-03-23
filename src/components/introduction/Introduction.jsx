@@ -23,7 +23,7 @@ export default function Introduction() {
       </div>
       <div className="image-container">
         <img src={photoProfile} alt="photoProfile" className="img-thumbnail" title="fraka" />
-        <p className="text-intro">Salam kenal, saya susah diam, biasanya berpikir, menulis atau buat sesuatu. senang rasanya bisa berbagi.</p>
+        <p className="text-intro">Salam kenal, saya susah diam, biasanya berpikir, menulis atau buat sesuatu.</p>
       </div>
       <div className="horizontal-line">
         <hr />
@@ -42,7 +42,7 @@ export default function Introduction() {
           </li>
           <li className="list" title="Informasi tambahan">
             <Link className="link" onClick={infoHandle}>
-              🖇 Informasi tambahan
+              🖇 Kontak
             </Link>
           </li>
         </ul>

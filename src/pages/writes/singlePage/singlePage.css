@@ -15,17 +15,21 @@
   font-size: 17px;
 }
 .singlePage-content {
+  margin-left: 10px;
   font-size: 20px;
   line-height: 2rem;
 }
 
-.cardImage:hover {
-  -webkit-transform: scale(1.03);
-  -moz-transform: scale(1.03);
-  -o-transform: scale(1.03);
-  -ms-transform: scale(1.03);
-  transform: scale(1.03);
-  transition: all 130ms ease-in-out 0s;
+.card-image {
+  width: 440px;
+  transition: transform 1s ease;
+}
+.card-image:hover {
+  transform: scale(1.2);
+}
+
+.card-image-flow {
+  overflow: hidden;
 }
 
 @media screen and (max-width: 1024px) {

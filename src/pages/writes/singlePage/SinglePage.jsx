@@ -6,6 +6,7 @@ import { WriteGeneralSinglePageContext } from "../../../context/WriteGeneralSing
 import SkeletonLoadingSinglePage from "../../../utils/SkeletonLoadingSinglePage";
 import { useContext } from "react";
 import "./singlePage.css";
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 export default function SinglePage() {
   const { title, releaseDate, readTime, author, description, image, loading } = useContext(WriteGeneralSinglePageContext);
@@ -37,12 +38,14 @@ export default function SinglePage() {
               <span> | {readTime} | </span>
               <span className="link">Author: @{author}</span>
             </div>
-            <div className="singlePage-image">
-              <CardMedia className="cardImage" component="img" height="600" image={image} alt="image" />
+            <div className="singlePage-image card-image-flow">
+              <CardMedia className="card-image" component="img" height="600" image={image} alt="image" />
             </div>
           </CardActionArea>
           <CardContent>
-            <p className="singlePage-content">{description}</p>
+            <p className="singlePage-content">
+              <ReactMarkdown>{description}</ReactMarkdown>
+            </p>
           </CardContent>
         </Card>
       </div>

@@ -50,7 +50,9 @@ export default function WritesTechGeneral() {
                         {write.title}
                       </Typography>
                     </CardContent>
-                    <CardMedia className="cardImage" component="img" height="300" image={write.photo} alt="image" />
+                    <div className="card-image-flow">
+                      <CardMedia className="card-image" component="img" height="300" image={write.photo} alt="image" />
+                    </div>
                   </Link>
                 </CardActionArea>
                 <CardActions>
