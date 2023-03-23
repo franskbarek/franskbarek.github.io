@@ -12,7 +12,7 @@
   justify-content: space-evenly;
   align-content: center;
   flex-wrap: wrap;
-  margin: 0 80px 0 80px;
+  margin: 0 50px 0 50px;
 }
 
 .project-item {
@@ -35,6 +35,14 @@
 
 .project-image {
   width: 440px;
+  transition: transform 1s ease;
+}
+.project-image:hover {
+  transform: scale(1.2);
+}
+
+.project-image-flow {
+  overflow: hidden;
 }
 
 .project-desc {
@@ -51,6 +59,12 @@
 }
 .project-link {
   font-size: 20px;
+}
+
+.expand-icon {
+  color: red;
+  font-size: large;
+  position: relative;
 }
 
 @media screen and (max-width: 1024px) {
