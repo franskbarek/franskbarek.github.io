@@ -45,6 +45,11 @@ export default function Introduction() {
               🖇 Kontak
             </Link>
           </li>
+          <li className="list" title="link">
+            <Link className="link" to="https://franskbarek.vercel.app">
+              🚀 Portfolio
+            </Link>
+          </li>
         </ul>
       </div>
     </div>
