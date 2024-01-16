@@ -36,7 +36,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use("/backend/projects/", projectsRoute);
+app.use("/backend/projects", projectsRoute);
 app.use("/backend/writes/", writesRoute);
 app.use("/backend/writes-tech-general/", writesTechGeneralRoute);
 app.use("/backend/writes-tech-programming/", writesTechProgrammingRoute);
