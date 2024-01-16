@@ -72,15 +72,17 @@ router.get("/", async (req, res) => {
 });
 
 router.get("/pagination", async (req, res) => {
-
   // pagination
   // using category for search, exp: http://localhost:5000/backend/projects?page=1&limit=4
   const page = parseInt(req.query.page) || 1; //by default 1
-  const limit = parseInt(req.query.limit) || 4 //required and flexible
+  const limit = parseInt(req.query.limit); //required and flexible
 
   try {
-    if(page > 0 && limit > 0){
-      const result = await Project.find().skip((page - 1) * limit).limit(limit).sort({ createdAt: -1 });
+    if (page > 0 && limit > 0) {
+      const result = await Project.find()
+        .skip((page - 1) * limit)
+        .limit(limit)
+        .sort({ createdAt: -1 });
       res.status(200).json(result);
     }
   } catch (err) {
@@ -88,22 +90,19 @@ router.get("/pagination", async (req, res) => {
   }
 });
 
-
 router.get("/search", async (req, res) => {
-
-   // filter using regex
-   const qSearch = req.query.search;
+  // filter using regex
+  const qFlex = req.query.flex;
 
   try {
-    const regex = new RegExp(`\\b(${qSearch.split(" ").join("|")})\\b`, "gi");
-    const result = await Project.find({ title: regex });
+    if (qFlex) {
+      const regex = new RegExp(`\\b(${qFlex.split(" ").join("|")})\\b`, "gi");
+      const result = await Project.find({ title: regex });
       res.status(200).json(result);
+    }
   } catch (err) {
     res.status(500).json(err);
   }
 });
-
-
-
 
 export default router;
