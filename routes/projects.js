@@ -51,6 +51,7 @@ import Project from "../models/Project.js";
 //   }
 // });
 
+
 // get
 router.get("/:id", async (req, res) => {
   try {
@@ -71,7 +72,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get("/pagination", async (req, res) => {
+router.get("/get/pagination", async (req, res) => {
   // pagination
   // using category for search, exp: http://localhost:5000/backend/projects?page=1&limit=4
   const page = parseInt(req.query.page) || 1; //by default 1
@@ -90,7 +91,7 @@ router.get("/pagination", async (req, res) => {
   }
 });
 
-router.get("/search", async (req, res) => {
+router.get("/get/search", async (req, res) => {
   // filter using regex
   const qFlex = req.query.flex;
 
