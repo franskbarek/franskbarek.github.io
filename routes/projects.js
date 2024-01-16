@@ -51,22 +51,31 @@ import Project from "../models/Project.js";
 //   }
 // });
 
-
-// get
-router.get("/:id", async (req, res) => {
-  try {
-    const project = await Project.findById(req.params.id);
-    res.status(200).json(project);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
 // get all
 router.get("/", async (req, res) => {
+  // pagination
+  // using category for search, exp: http://localhost:5000/backend/projects?page=1&limit=4
+  const page = parseInt(req.query.page) || 1; //by default 1
+  const limit = parseInt(req.query.limit); //required and flexible
+
+  // filter using regex
+  const qFlex = req.query.flex;
+
   try {
-    const projects = await Project.find().sort({ createdAt: -1 });
-    res.status(200).json(projects);
+    if (page > 0 && limit > 0) {
+      const result = await Project.find()
+        .skip((page - 1) * limit)
+        .limit(limit)
+        .sort({ createdAt: -1 });
+      res.status(200).json(result);
+    } else if (qFlex) {
+      const regex = new RegExp(`\\b(${qFlex.split(" ").join("|")})\\b`, "gi");
+      const result = await Project.find({ title: regex });
+      res.status(200).json(result);
+    } else {
+      const projects = await Project.find().sort({ createdAt: -1 });
+      res.status(200).json(projects);
+    }
   } catch (err) {
     res.status(500).json(err);
   }
@@ -101,6 +110,16 @@ router.get("/get/search", async (req, res) => {
       const result = await Project.find({ title: regex });
       res.status(200).json(result);
     }
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// get
+router.get("/:id", async (req, res) => {
+  try {
+    const project = await Project.findById(req.params.id);
+    res.status(200).json(project);
   } catch (err) {
     res.status(500).json(err);
   }
