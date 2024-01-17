@@ -12,6 +12,7 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 console.log(__dirname);
+import serverless from "serverless-http";
 import cors from 'cors';
 
 const app = express();
@@ -25,19 +26,13 @@ mongoose
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
-  .then(console.log("connected to mongodb 🚀🚀"))
+  .then(() => console.log("connected to mongodb 🚀🚀"))
   .catch((err) => console.log(err));
 
 app.use(logger("dev"));
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
-// app.use((req, res, next) => {
-//   res.setHeader("Access-Control-Allow-Origin", "*");
-//   res.setHeader("Access-Control-Allow-Methods", "GET, POST, PATCH, PUT, DELETE, OPTIONS");
-//   res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
-//   next();
-// });
 
 app.use("/backend/projects", projectsRoute);
 app.use("/backend/writes/", writesRoute);
@@ -46,9 +41,15 @@ app.use("/backend/writes-tech-programming/", writesTechProgrammingRoute);
 
 app.use((err, req, res, next) => {
   console.error(err.stack);
-  res.status(500).send("Something broke!");
+  res.status(500).json({ error: "Something broke!" });
 });
 
+
+if (!process.env.LAMBDA_TASK_ROOT) {
 app.listen(process.env.PORT || 5000, () => {
   console.log("connected to backend 🦋🌴");
 });
+}
+
+// Ekspor app atau serverless handler jika dijalankan sebagai fungsi
+export const handler = serverless(app);
